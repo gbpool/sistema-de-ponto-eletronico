@@ -4,11 +4,38 @@ const horaMinSeg = document.getElementById("hora-min-seg");
 const arrayDayWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"];
 
 
+const selecTiposPontos = document.getElementById("select-tipos-pontos");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 const dialogPonto = document.getElementById("dialog-ponto");
+
+
+
+navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+});
+
+
+
+
+navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position)
+} );
 
 
 
@@ -27,6 +54,35 @@ btnDialogFechar.addEventListener("click", () =>{
 
 
 
+
+
+
+const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
+btnDialogRegistrarPonto.addEventListener("click", () => {
+
+    let data = dataCompleta();
+    let hora = horaCompleta();
+    let tipoPonto = document.getElementById("select-tipos-pontos").value;
+
+    let ponto = {
+        "data" : dataCompleta,
+        "hora": horaCompleta,
+        "tipo": tipoPonto,
+        "Id": 1
+    }
+
+    localStorage.setItem("registro", JSON,Stringify(ponto));
+    
+    console.log(ponto)
+});
+
+
+
+
+
+
+
+
 function daySemana() {
     //retornar dia da semana
     const date = new Date();
@@ -39,14 +95,14 @@ function daySemana() {
 
 function dataCompleta() {
     const date = new Date();
-    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    return String(date.getDate()).padStart(2, '0') + "/" + String((date.getMonth() + 1)).padStart(2, '0') + "/" + date.getFullYear();
 }
 
 
 
 function horaCompleta() {
     const date = new Date();
-    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    return String(date.getHours()).padStart(2, '0') + ":" + String(date.getMinutes()).padStart(2, '0') + ":" + String(date.getSeconds()).padStart(2,'0');
 }
 
 
@@ -56,6 +112,10 @@ function atualizaHora() {
 }
 
 setInterval(atualizaHora, 1000);
+
+
+
+
 
 
 

@@ -18,13 +18,19 @@
     </div>
 
     <dialog id="dialog-ponto">
-        <p>Data</p>
-        <p>Hora</p>
+        <p id="data-hora">Data</p>
+        <p id="hora-min-seg">Hora</p>
+        <select name="select-tipos-pontos" id="select-tipos-pontos">
+        <option value="Entrada">Entrada</option>
+        <option value="intervalo">intervalo</option>
+        <option value="Volta intervalo">Volta intervalo</option>
+        <option value="Saida">Saida</option>
+    </select>
+
+        <button id="btn--dialog-registrar-ponto">Registrar-ponto</button>
+
         <button id="btn-dialog-fechar" class="btn-dialog-fechar">X</button>
-        <button>Entrada</button>
-        <button>Intervalo</button>
-        <button>Volta intervalo</button>
-        <button>Saida</button>
+  
     </dialog>
 
 
