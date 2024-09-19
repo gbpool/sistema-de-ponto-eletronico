@@ -2,8 +2,6 @@ const diaSemana = document.getElementById("dia-semana");
 const diaMesAno = document.getElementById("dia-mes-ano");
 const horaMinSeg = document.getElementById("hora-min-seg");
 const arrayDayWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"];
-
-
 const selecTiposPontos = document.getElementById("select-tipos-pontos");
 
 
@@ -11,6 +9,13 @@ const selecTiposPontos = document.getElementById("select-tipos-pontos");
 
 
 
+//logica pra mostrar o proximo ponto
+let ProxPonto= {
+    "Entrada": "intervalo",
+    "intervalo": "Volta-intervalo",
+    "Volta-intervalo": "Saida",
+    "Saida": "Entrada"
+} 
 
 
 
@@ -20,6 +25,9 @@ const selecTiposPontos = document.getElementById("select-tipos-pontos");
 
 
 
+
+
+// coletar a localizaçao do usuario
 const dialogPonto = document.getElementById("dialog-ponto");
 
 
@@ -40,23 +48,73 @@ navigator.geolocation.getCurrentPosition((position) => {
 
 
 
+//logica do botao pra abrir
 const btnResgistrarPonto = document.getElementById("btn-registrar-ponto");
 btnResgistrarPonto.addEventListener("click", () => {
+
+
+ 
+
+
+
+    //auto-selecionar o proximo ponto de acordo com o ultimo
+    let dialogSelect = document.getElementById("select-tipos-pontos");
+
+    let TipoUltimoPonto = localStorage.getItem("tipoUltimoPonto");
+    console.log(TipoUltimoPonto)
+
+    dialogSelect.value = ProxPonto[TipoUltimoPonto]
+
+
+
+
     dialogPonto.showModal();
 });
 
 
 const btnDialogFechar = document.getElementById("btn-dialog-fechar");
 btnDialogFechar.addEventListener("click", () =>{
+    
+
     dialogPonto.close();
 });
 
 
 
 
+function salvarRegistroLocalStorage(ponto) {
+    let TodosOsPontos = localStorage.getItem("registros");
+
+    if(todosOsPontos) {
+        return[];
+    }
+
+    return JSON.parse(todosOsPontos)
+
+
+    
+    
+}
 
 
 
+function salvarRegistroLocalStorage(ponto) {
+    let pontos = recuperarPontosLocalStorage();
+
+    pontos.push(ponto);
+
+
+    localStorage.setItem("registro", JSON.stringify(ponto));
+}
+
+
+
+
+
+
+
+
+//evento para aparecer o menu de selecionar o tipo de ponto
 const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
 btnDialogRegistrarPonto.addEventListener("click", () => {
 
@@ -71,7 +129,12 @@ btnDialogRegistrarPonto.addEventListener("click", () => {
         "Id": 1
     }
 
-    localStorage.setItem("registro", JSON,Stringify(ponto));
+
+//aqui ta salvando o registro
+
+
+    localStorage.setItem("registro", ponto)
+    localStorage.setItem("tipoUltimoPonto", tipoPonto);
     
     console.log(ponto)
 });
@@ -82,7 +145,7 @@ btnDialogRegistrarPonto.addEventListener("click", () => {
 
 
 
-
+//funçao para mostrar e atualizar a hora
 function daySemana() {
     //retornar dia da semana
     const date = new Date();
@@ -111,7 +174,15 @@ function atualizaHora() {
     horaMinSeg.textContent = horaCompleta();
 }
 
+
+
+
+
+
+
+ atualizaHora();
 setInterval(atualizaHora, 1000);
+
 
 
 
