@@ -80,20 +80,4 @@ background-color: rgb(39, 50, 156);
 
 #btn-registrar-ponto, #btn-dialog-registrar-ponto{
     text-align: center;
-    background-color:rgb(33, 163, 238) ;
-    width: 200px;
-    height: 75px;
-    border: 0px;
-    cursor: pointer;
 }
-
-#btn-registrar-ponto:hover{
-background-color: #00b7ff;
-
-}
-
-#btn-registrar-ponto:active{
-background-color: rgb(16, 49, 109);
-}
-
-
