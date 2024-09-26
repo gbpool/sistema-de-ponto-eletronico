@@ -1,3 +1,99 @@
-.data-hora{
-    text-align: center;
+body{
+background-color: rgb(39, 50, 156);
+
 }
+
+
+
+
+.data-hora p{
+    color: #fff;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+/*estilo do botao de fechar o dialog*/
+.btn-dialog-fechar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    height: 35px;
+    width: 40px;
+    color: #ff0000;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* estilo do select*/
+#select-tipos-pontos{
+    font-size: 1.5rem;
+    padding: 25px;
+}
+
+
+#dialog-ponto p{
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+
+
+
+/*estilo do botao dentro do dialog*/
+#btn-dialog-registrar-ponto{
+    color: #ffffff;
+    background-color:rgb(33, 163, 238) ;
+    border: 0px;
+    width: 120px;
+    height: 25px;   
+}
+#btn-dialog-registrar-ponto:hover{
+    background-color: #00b7ff;   
+    }
+    #btn-dialog-registrar-ponto:active{
+    background-color: rgb(1, 52, 146);
+    }
+    
+
+
+
+
+
+
+/*estilo da div do botao de abrir*/
+#div-btnresgistrar-ponto{
+    text-align: center;
+    padding-top: 35px;
+}
+
+
+
+
+
+
+/*estilo do botao de abrir*/
+
+#btn-registrar-ponto, #btn-dialog-registrar-ponto{
+    text-align: center;
+    background-color:rgb(33, 163, 238) ;
+    width: 200px;
+    height: 75px;
+    border: 0px;
+    cursor: pointer;
+}
+
+#btn-registrar-ponto:hover{
+background-color: #00b7ff;
+
+}
+
+#btn-registrar-ponto:active{
+background-color: rgb(16, 49, 109);
+}
+
+
