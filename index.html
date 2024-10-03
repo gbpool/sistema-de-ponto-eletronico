@@ -17,8 +17,34 @@
 
     </div>
 
-<button>Registrar-ponto</button>
+    <dialog id="dialog-ponto">
+        <p id="dialog-dia-mes-ano">01/09/2024</p>
+        <p id="dialog-hora-min-seg">08:59:20</p>
 
+    <select name="select-tipos-pontos" id="select-tipos-pontos">
+        <option value="Entrada">Entrada</option>
+        <option value="intervalo">intervalo</option>
+        <option value="Volta-intervalo">Volta intervalo</option>
+        <option value="Saida">Saida</option>
+    </select>
+
+<button id="btn-dialog-registrar-ponto">Registrar-ponto</button>
+<button id="btn-dialog-fechar" class="btn-dialog-fechar">X</button>
+
+</dialog>
+
+<div id="div-btnresgistrar-ponto">
+    
+<button id="btn-registrar-ponto">Registrar-ponto</button>
+
+</div>
+
+<div id="div-alerta" class="hidden">
+
+    <p id="alerta-texto">Ponto Registrado como:  as </p>
+    
+
+</div>
 
 
 

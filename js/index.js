@@ -1,6 +1,8 @@
 const diaSemana = document.getElementById("dia-semana");
 const diaMesAno = document.getElementById("dia-mes-ano");
+const DialogdiaMesAno = document.getElementById("dialog-dia-mes-ano")
 const horaMinSeg = document.getElementById("hora-min-seg");
+const DialogHoraMinSeg = document.getElementById("dialog-hora-min-seg")
 const arrayDayWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"];
 const selecTiposPontos = document.getElementById("select-tipos-pontos");
 
@@ -10,7 +12,8 @@ const selecTiposPontos = document.getElementById("select-tipos-pontos");
 
 
 //logica pra mostrar o proximo ponto
-let ProxPonto= {
+let ProxPonto= 
+{
     "Entrada": "intervalo",
     "intervalo": "Volta-intervalo",
     "Volta-intervalo": "Saida",
@@ -53,11 +56,8 @@ const btnResgistrarPonto = document.getElementById("btn-registrar-ponto");
 btnResgistrarPonto.addEventListener("click", () => {
 
 
- 
-
-
-
     //auto-selecionar o proximo ponto de acordo com o ultimo
+
     let dialogSelect = document.getElementById("select-tipos-pontos");
 
     let TipoUltimoPonto = localStorage.getItem("tipoUltimoPonto");
@@ -77,6 +77,13 @@ btnDialogFechar.addEventListener("click", () =>{
     
 
     dialogPonto.close();
+
+
+
+
+
+
+
 });
 
 
@@ -85,11 +92,11 @@ btnDialogFechar.addEventListener("click", () =>{
 function salvarRegistroLocalStorage(ponto) {
     let TodosOsPontos = localStorage.getItem("registros");
 
-    if(todosOsPontos) {
+    if(TodosOsPontos) {
         return[];
     }
 
-    return JSON.parse(todosOsPontos)
+    return JSON.parse(TodosOsPontos)
 
 
     
@@ -130,6 +137,11 @@ btnDialogRegistrarPonto.addEventListener("click", () => {
     }
 
 
+dialogPonto.close();
+
+const divAlerta = document.getElementById("div-alerta")
+
+
 //aqui ta salvando o registro
 
 
@@ -139,12 +151,24 @@ btnDialogRegistrarPonto.addEventListener("click", () => {
     console.log(ponto)
 
 
+
+
     
-divAlerta.classList.remove("hidden");
-divAlerta.classList.add("show");
+    divAlerta.classList.remove("hidden");
+    divAlerta.classList.add("show");
+    
+   const AlertaTexto = document.getElementById("alerta-texto")
+   AlertaTexto.textContent = "Ponto Registrado como:"  +tipoPonto +  horaCompleta()
+
+
+
+
+
 
 setTimeout(() => {
 
+    divAlerta.classList.remove("show");
+    divAlerta.classList.add("hidden");
 
 },5000);
 
@@ -183,6 +207,7 @@ function horaCompleta() {
 
 function atualizaHora() {
     horaMinSeg.textContent = horaCompleta();
+    DialogHoraMinSeg.textContent = horaCompleta();
 }
 
 
@@ -203,8 +228,10 @@ setInterval(atualizaHora, 1000);
 
 
 
+
+
 diaSemana.textContent = daySemana();
 
 diaMesAno.textContent = dataCompleta();
-
+DialogdiaMesAno.textContent = dataCompleta();
 horaMinSeg.textContent = horaCompleta();

@@ -1,6 +1,7 @@
 body{
 background-color: rgb(39, 50, 156);
-
+margin: 0px;
+font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -10,7 +11,7 @@ background-color: rgb(39, 50, 156);
     color: #fff;
     padding-top: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
 
 }
 
@@ -30,9 +31,16 @@ background-color: rgb(39, 50, 156);
 
 /* estilo do select*/
 #select-tipos-pontos{
-    font-size: 1.5rem;
-    padding: 25px;
+    font-size: 1.15rem;
+    padding: 27px;
+    color: #ffffff;
+    background-color: rgb(1, 52, 146);
+    border: 0px;
 }
+
+
+
+
 
 
 #dialog-ponto p{
@@ -49,9 +57,9 @@ background-color: rgb(39, 50, 156);
     color: #ffffff;
     background-color:rgb(33, 163, 238) ;
     border: 0px;
-    width: 120px;
-    height: 25px;   
 }
+
+
 #btn-dialog-registrar-ponto:hover{
     background-color: #00b7ff;   
     }
@@ -68,7 +76,10 @@ background-color: rgb(39, 50, 156);
 /*estilo da div do botao de abrir*/
 #div-btnresgistrar-ponto{
     text-align: center;
-    padding-top: 35px;
+    padding: 35px;
+    background-color: #fff;
+
+
 }
 
 
@@ -80,4 +91,51 @@ background-color: rgb(39, 50, 156);
 
 #btn-registrar-ponto, #btn-dialog-registrar-ponto{
     text-align: center;
+        background-color:rgb(33, 163, 238) ;
+        width: 200px;
+        height: 75px;
+        border: 0px;
+        cursor: pointer;
+    }
+    #btn-registrar-ponto:hover{
+    background-color: #00b7ff;
+    }
+    #btn-registrar-ponto:active{
+    background-color: rgb(16, 49, 109);
+    }
+
+
+
+
+
+
+
+#div-alerta{
+color: #fff;
+background-color: #00b7ff;
+position: absolute;
+bottom: 15px;
+right: 15px;
+
+
+}
+
+
+
+
+
+.show{
+
+    opacity: 1;
+
+
+
+}
+
+
+.hidden{
+
+opacity: 0;
+
+
 }
