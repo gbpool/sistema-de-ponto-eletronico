@@ -44,13 +44,76 @@
     <p id="alerta-texto">Ponto Registrado como:  as </p>
     
 
+
+
+
 </div>
 
-<div>
-    <fieldset>
-<ul id="lista-registros"></ul>
-    </fieldset>
+
+
+<!-- menu -->
+<button id="menu-toggle" class="menu-button">☰</button> <!-- Botão do menu -->
+    
+<div class="sidebar" id="sidebar">
+    <button id="mostrar-ausencia">Justificativa de ausência</button>
+    <button id="mostrar-registros">mostrar registros</button>
+    
 </div>
+
+
+<!--botao para aparecer os registros antigos-->
+<dialog id="dialog-registros-passados" class="dialog-registros">
+    <form method="dialog">
+        <p>
+<div class="main-content">
+            <h1>Relatórios Passados</h1>
+            <button id="fechar-registros" class="button-fechar-registros">X</button>
+       
+        <div class="div-registros">
+            <fieldset>
+            <ul id="lista-registros"></ul>
+            </fieldset>        
+        </div>
+        
+</div>
+</p>
+    </form>
+</dialog>
+
+
+
+
+<!-- aparecer o formulario de ausencia -->
+<dialog id="dialog-ausencia">
+    <form method="dialog">
+        <p>
+            <label for="justificativa-ausencia">
+                Justificativa da ausência:
+                <input type="text" id="justificativa-ausencia" placeholder="Justificativa da ausência">
+                <br><br>
+                Atestado (caso necessite):
+                <input type="file" id="atestado-ausencia">
+                <br><br>
+            </label>
+            <div>
+                <button type="button" id="btn-dialog-registrar-ausencia">Registrar ausência</button>
+                <button type="button" id="btn-dialog-fechar" class="btn-dialog-fechar">X</button>
+            </div>
+        </p>
+    </form>
+</dialog>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
